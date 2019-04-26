@@ -1,4 +1,4 @@
-# JI_Experiences
+# Winter Store
 
 Trabalho Final de Engenharia de Software
 O publico alvo será pessoas viciadas em Game Of Thrones.
