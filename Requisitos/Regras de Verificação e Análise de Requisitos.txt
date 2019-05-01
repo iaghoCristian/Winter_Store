@@ -1,0 +1,8 @@
+﻿A descrição dos requisitos deve ser coerente e objetiva, esclarecendo o que deve ser construído. Também é importante definir o grau de detalhamento destes requisitos: 
+Os requisitos mais comuns não devem ter detalhes excessivos, já os mais específicos devem ser detalhados para serem melhores compreendidos.
+
+
+Os requisitos serão definidos como "Controle" (Código CTL), que diz respeito aos requisitos referente às funcionalidades de controle do sistema.
+
+
+Todos também serão classificados entre "Essencial", "Importante" e "Desejável" para que possa ser definida a prioridade.
