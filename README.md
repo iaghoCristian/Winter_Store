@@ -14,6 +14,12 @@ Também deve ser possível cadastrar pedidos e excluir.</p>
 <br>HTML/CSS + PHP - para a interface</p>
 
 <p>Regras de uso do Git: </p>
-<p>- Os comits feitos devem ter relação com o documento comitado.</p>
+<p>- Os commits feitos devem ter relação com o documento que foi adicionado ou modificado.</p>
 <p>- Todo o conteudo principal do trabalho deverá ficar na branch master.</p>
 <p>- Todas as partes referentes ao trabalho devem estar no Git.</p>
+
+<p>Regras de Commit: </p>
+<p>- O assunto deve conter no max 50 caracteres;</p>
+<p>- A linha nao deve terminar com ponto final;</p>
+
+
