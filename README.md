@@ -12,3 +12,7 @@ Cada casa deverá se armar e para isso poderá alugar dragões, exercitos e arma
 As tecnologias usadas serão:
 MySQL - para banco de dados 
 HTML/CSS + PHP - para a interface
+
+Os comits feitos devem ter relação com o documento comitado.
+Todo o conteudo principal do trabalho deverá ficar na branch master.
+Todas as partes referentes ao trabalho devem estar no Git.
