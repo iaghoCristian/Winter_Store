@@ -34,3 +34,13 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+### Text ###
+*.doc
+*.docx
+*.log
+*.msg
+*.pages
+*.rtf
+*.wpd
+*.wps
