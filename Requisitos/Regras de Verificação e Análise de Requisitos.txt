@@ -1,5 +1,12 @@
 ﻿A descrição dos requisitos deve ser coerente e objetiva, esclarecendo o que deve ser construído. Também é importante definir o grau de detalhamento destes requisitos: 
-Os requisitos mais comuns não devem ter detalhes excessivos, já os mais específicos devem ser detalhados para serem melhores compreendidos.
+
+Todo requisito deve ser atomico, ou seja caso o requisito possa ser possível 
+ser dividido em dois requisitos ele deve ser dividido.
+
+Evitar palavras:
+-E,OU,SOMENTE SE, EXCETO, SE NECESSÁRIO, MAS, CONTUDO, ENTRETANTO, USUALMENTE, GERALMENTE, TIPICAMENTE, FREQUENTEMENTE, AMIGÁVEL, VERSÁTIL, FLEXÍVEL, APROXIMADAMENTE,TÃO LOGO QUANTO POSSIVEL, TALVEZ, PROVAVELMENTE ou palavras que forneçam a mesma idéia que essas.
+
+Agrupe corretamente os requisitos: deverá ser realizada com atenç~~ao e cuidado, pois dela depende um entendimento correto dos requisitos tanto por parte dos usuários como por parte dos técnicos.
 
 
 Os requisitos serão definidos como "Controle" (Código CTL), que diz respeito aos requisitos referente às funcionalidades de controle do sistema.
