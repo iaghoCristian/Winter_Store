@@ -13,6 +13,8 @@ Também deve ser possível cadastrar pedidos e excluir.</p>
 <br>MySQL - para banco de dados 
 <br>HTML/CSS + PHP - para a interface</p>
 
+<p>O padrão de projeto utilizado será MVC, um padrão de arquitetura de software que separa a representação da informação da interação do usuário com ela. Divide uma aplicação em três partes interconectadas (View, Model e Controller), separando estes componentes, possibilita a reutilização do código e desenvolvimento paralelo de maneira eficiente.</p>
+
 <p>Regras de uso do Git: </p>
 <p>- Os commits feitos devem ter relação com o documento que foi adicionado ou modificado.</p>
 <p>- Todo o conteudo principal do trabalho deverá ficar na branch master.</p>
