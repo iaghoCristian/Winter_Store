@@ -6,25 +6,26 @@
 	$conect = new Conection("localhost","root","","casa");
 	$conect-> conectar();
 	
-	$clienteDAO = new ClienteDAO();
-	$tab = $clienteDAO->consultarTodos($conect->getLink());
+	$casaDAO = new CasaDAO();
+	$tab = $casaDAO->consultarTodas($conect->getLink());
 	
 	
-	$openTable="<table style =\"width:50%\" border=\"1px\">
-		<tr>
-			<th>ID</th>
-			<th>Nome</th>
-			<th>Representante</th>
-			<th>Patrimonio</th>
-		</th>";
+	$openTable=" 
+				<table style =\"width:50%\" border=\"1px\">
+					<tr>
+						<th>ID</th>
+						<th>Nome</th>
+						<th>Representante</th>
+						<th>Patrimonio</th>
+					</th>";
 	$bodyTable=	"";
 	while($row = mysqli_fetch_assoc($tab)){
 			$bodyTable = $bodyTable."<tr>
-				<td>".$row['ID']."</td>
-				<td>".$row['Nome']."</td>
-				<td>".$row['Representante']."</td>
-				<td>".$row['Patrimonio']."</td>
-			</tr>";
+										<td>".$row['ID']."</td>
+										<td>".$row['nomeCasa']."</td>
+										<td>".$row['Representante']."</td>
+										<td>".$row['Patrimonio']."</td>
+									</tr>";
 		}
 	$closeTable = "</table>";
 	
@@ -33,14 +34,16 @@
 
 		<header>
 			<meta charset=\"utf-8\">
-			<title> Titulo </title>
+			<title> Winter Store </title>
+			<link rel=\"stylesheet\" type=\"text/css\" href=\"estilo.css\"/>
 		</header>
 	
-		<body>".$openTable.$bodyTable.$closeTable.
-			
-			
+		<body>
+		<h2>Consulta de Todas as Casas</h2>
+		<div class=\"cadastro\">".$openTable.$bodyTable.$closeTable.
 				
-			"</form>
+		"</form>
+			<center><button type=\"button\"><a href=\"../View/Casa.html\"> Voltar </a></button></center>
 		</body>
 
 	</html>"

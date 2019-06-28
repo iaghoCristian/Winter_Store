@@ -1,5 +1,5 @@
 <?php
-	class Cliente{
+	class Casa{
 		var $id,$nome,$representante,$patrimonio;
 		
 		/*function __construct(){
@@ -45,7 +45,7 @@
 			$this->patrimonio = $patrimoniov;
 		}
 		
-		function imprimirCliente(){
+		function imprimirCasa(){
 			echo $this->id." , ".$this->nome." , ".$this->representante." , ".$this->patrimonio;			
 		}
 	}

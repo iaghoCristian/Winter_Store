@@ -9,14 +9,33 @@
 	$representante = $_POST['representante'];
 	$patrimonio = $_POST['patrimonio'];
 	
-	$cliente = new Cliente($id,$nome,$representante,$patrimonio);
-	$cliente->imprimirCliente();
+	$casa = new Casa($id,$nome,$representante,$patrimonio);
+	$casa->imprimirCasa();
 	
 	
 	$conect = new Conection("localhost","root","","casa");
 	$conect-> conectar();
 	
-	$clienteDAO = new ClienteDAO();
-	$clienteDAO->alterar($cliente,$conect->getLink());
+	$casaDAO = new CasaDAO();
+	$casaDAO->AlterarCasa($casa,$conect->getLink());
+
+	echo  "<!DOCTYPE html>
+		<html lang = \"pt-br\">
+
+		<header>
+			<meta charset=\"utf-8\">
+			<title> Winter Store </title>
+			<link rel=\"stylesheet\" type=\"text/css\" href=\"estilo.css\"/>
+		</header>
+	
+		<body>
+			<div class=\"cadastro\">
+				<center><button type=\"button\"><a href=\"../View/Casa.html\"> Voltar </a></button></center>
+				<center><button type=\"button\"><a href=\"../View/AlterarCasa.html\"> Alterar novamente </a></button></center>
+			</div>
+			<script>alert(\"Alterado com sucesso!\");</script>
+		</body>
+
+	</html>" 
 
 ?>

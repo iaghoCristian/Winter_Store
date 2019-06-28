@@ -5,13 +5,13 @@
 	$id= $_POST['id'];
 
 	
-	$cliente = new Cliente($id,"","","");
+	$casa = new Casa($id,"","","");
 	
 	$conect = new Conection("localhost","root","","casa");
 	$conect-> conectar();
 	
-	$clienteDAO = new ClienteDAO();
-	$row = $clienteDAO->consultar($cliente,$conect->getLink());
+	$casaDAO = new CasaDAO();
+	$row = $casaDAO->consultarCasa($casa,$conect->getLink());
 	
 	echo  "<!DOCTYPE html>
 		<html lang = \"pt-br\">
@@ -19,17 +19,21 @@
 		<header>
 			<meta charset=\"utf-8\">
 			<title> Titulo </title>
+			<link rel=\"stylesheet\" type=\"text/css\" href=\"estilo.css\"/>
 		</header>
 	
 		<body>
 			<h2> Consulta de Casa </h2>
+			<div class=\"cadastro\">
 			<form action=\"#\" method=\"post\">
-				ID: <input type=\"text\" name=\"id\" value=".$row['ID']."><br>
-				Nome: <input type=\"text\" name=\"nomev\" value=".$row['Nome']."><br>
-				Representante: <input type=\"text\" name=\"representante\" value=".$row['Representante']."><br>
-				Patrimonio: <input type=\"text\" name=\"patrimonio\" value=".$row['Patrimonio']."><br>
-				
+				<label>ID: </label><input type=\"text\" name=\"id\" value=".$row['ID']." readonly><br>
+				<label>Nome: </label><input type=\"text\" name=\"nomev\" value=".$row['nomeCasa']." readonly><br>
+				<label>Representante: </label><input type=\"text\" name=\"representante\" value=".$row['Representante']." readonly><br>
+				<label>Patrimonio: </label><input type=\"text\" name=\"patrimonio\" value=".$row['Patrimonio']." readonly><br>
+			
+				<button type=\"button\"><a href=\"../View/Casa.html\"> Voltar </a></button>
 			</form>
+			</div>
 		</body>
 
 	</html>"

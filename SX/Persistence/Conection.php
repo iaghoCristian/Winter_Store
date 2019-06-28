@@ -21,9 +21,8 @@
 		function conectar(){
 			$this->link = mysqli_connect($this->server,$this->user,$this->pwd,$this->bd);
 			if(!$this->link) {
-				die ("nao foi possivel conectar, bb".mysqli_error());
+				die ("Nao foi possivel conectar!".mysqli_error());
 			}
-			echo "sucesso garota";
 		}
 		
 		function getLink(){

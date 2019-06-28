@@ -5,12 +5,32 @@
 	$id= $_POST['id'];
 
 	
-	$cliente = new Cliente($id,"","","");
+	$casa = new Casa($id,"","","");
 	
 	$conect = new Conection("localhost","root","","casa");
 	$conect-> conectar();
 	
-	$clienteDAO = new ClienteDAO();
-	$clienteDAO->excluir($cliente,$conect->getLink());
+	$casaDAO = new CasaDAO();
+	$casaDAO->ExcluirCasa($casa,$conect->getLink());
 
+	echo  "<!DOCTYPE html>
+		<html lang = \"pt-br\">
+
+		<header>
+			<meta charset=\"utf-8\">
+			<title> Winter Store </title>
+			<link rel=\"stylesheet\" type=\"text/css\" href=\"estilo.css\"/>
+		</header>
+	
+		<body>
+			<div class=\"cadastro\">
+				<center><button type=\"button\"><a href=\"../View/Casa.html\"> Voltar </a></button></center>
+				<center><button type=\"button\"><a href=\"../View/ExcluirCasa.html\"> Excluir novamente </a></button></center>
+			</div>
+			<script>alert(\"Excluido com sucesso!\");</script>
+		</body>
+
+	</html>" 
+
+	//header("location: ../View/Casa.html");
 ?>

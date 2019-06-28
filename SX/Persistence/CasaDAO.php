@@ -1,40 +1,52 @@
 <?php
 	
-	class ClienteDAO{
+	class CasaDAO{
 		
 		function __construct(){
-			
 		}
-		function cadastrar($Cliente, $link){
-			$query = "INSERT INTO `casa`(`ID`, `Nome`, `Representante`, `Patrimonio`) VALUES ('".
-			$Cliente->getId()."','".$Cliente->getNome()."','".
-			$Cliente->getRepresentante()."',".$Cliente->getPatrimonio().");";
+		/**Uma função que cadastra uma casa, fazendo uma requisição com o banco de dados
+		 * utilizamos a variavel &Casa para representar a nossa casa
+		 */
+		function cadastrarCasa($Casa, $link){
+			/** em &query inserimos na tabela casa e em suas determinadas colunas os valores que
+			 * estão em &Casa
+			 */
+			$query = "INSERT INTO `casa`(`ID`, `nomeCasa`, `Representante`, `Patrimonio`) VALUES ('".
+			$Casa->getId()."','".$Casa->getNome()."','".
+			$Casa->getRepresentante()."',".$Casa->getPatrimonio().");";
 			echo $query;
 	
 			if(!mysqli_query($link,$query)){
-				die ("nao foi possivel salvar, kéridas".mysqli_error($link));
+				die ("Nao foi possivel salvar!".mysqli_error($link));
 		
 			}
-			echo "salvo gatan";
 			
 		}
-		
-		function excluir($Cliente,$link){
-			$query = "DELETE FROM `casa` WHERE ID = '".$Cliente->getId()."'";
+		/**Uma função que exclui uma casa, fazendo uma requisição com o banco de dados
+		 * utilizamos a variavel &Casa para representar a nossa casa
+		 */
+		function excluirCasa($Casa,$link){
+			/** em &query excluimos na tabela casa e em suas determinadas colunas os valores que
+			 * estão em &Casa
+			 */
+			$query = "DELETE FROM `casa` WHERE ID = '".$Casa->getId()."'";
 			if(!mysqli_query($link,$query)){
-				die ("nao foi possivel excluir, kéridas".mysqli_error($link));
-		
+				die ("Nao foi possivel excluir!".mysqli_error($link));
 			}
-			echo "excluiu gatan";
 		}
 		
-		function consultar($Cliente,$link){
-			$query = "SELECT * FROM `casa` WHERE ID = '".$Cliente->getId()."'";
+		/**Uma função que cconsulta uma casa, fazendo uma requisição com o banco de dados
+		 * utilizamos a variavel &Casa para representar a nossa casa
+		 */
+		function consultarCasa($Casa,$link){
+			/** em &query consultamos da tabela casa suas determinadas colunas os valores
+			 */
+			$query = "SELECT * FROM `casa` WHERE ID = '".$Casa->getId()."'";
 			
 			$r = mysqli_query($link,$query);
 			
 			if(!$r){
-				echo "não consultou";
+				echo "Não foi possível consultar!";
 				echo "erro mysql".mysqli_error();
 				exit;
 			}
@@ -42,30 +54,41 @@
 			
 		}
 		
-		function consultarTodos($link){
+		/**Uma função que consulta todas as casas, fazendo uma requisição com o banco de dados
+		 * utilizamos a variavel &Casa para representar a nossa casa
+		 */
+		function consultarTodas($link){
+			/** em &query consultamos da tabela casa suas determinadas colunas os valores de todas as casas
+			 */
 			$query = "SELECT * FROM `casa` ";
 			
 			$r = mysqli_query($link,$query);
 			
 			if(!$r){
-				echo "não consultou";
+				echo "Não foi possível consultar!";
 				echo "erro mysql".mysqli_error();
 				exit;
 			}
 			return $r;
 			
 		}
-		function alterar($Cliente,$link){
-			$query = "UPDATE `casa` SET `Nome`='".$Cliente->getNome().
-					"',`Representante`='".$Cliente->getRepresentante().
-					"',`Patrimonio`=".$Cliente->getPatrimonio().
-					" WHERE id = '".$Cliente->getId()."'";
+
+		/**Uma função que altera uma casa, fazendo uma requisição com o banco de dados
+		 * utilizamos a variavel &Casa para representar a nossa casa
+		 */
+		function alterarCasa($Casa,$link){
+			/** em &query alteramos na tabela casa suas determinadas colunas (exceto o ID)os valores que
+			 * estão em &Casa
+			 */
+			$query = "UPDATE `casa` SET `nomeCasa`='".$Casa->getNome().
+					"',`Representante`='".$Casa->getRepresentante().
+					"',`Patrimonio`=".$Casa->getPatrimonio().
+					" WHERE id = '".$Casa->getId()."'";
 			echo$query;
 			if(!mysqli_query($link,$query)){
-				die ("nao foi possivel alterar, cansada".mysqli_error($link));
+				die ("Nao foi possivel alterar!".mysqli_error($link));
 		
 			}
-			echo "alterada";
             
 		}
 	}
